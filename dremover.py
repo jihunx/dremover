@@ -1,10 +1,10 @@
-# -*- coding: utf-8 -*-
-import os, shutil
+import os
+import shutil
 
 # 대상 디렉터리 지정
-target_dir1 = r"/home/gd/movie"
-target_dir2 = r"/home/gd/tv"
-target_dir3 = r"/home/gd/drama"
+target_dir1 = r"/volume2/drive/gd/movie"
+target_dir2 = r"/volume2/drive/gd/tv"
+target_dir3 = r"/volume2/drive/gd/drama"
 
 # 대상 확장자 지정
 target_ext = (".mkv", ".mp4", ".avi", ".3gp", ".mpg", ".qt", ".wmv", ".flv", ".webm", ".mov")
@@ -47,6 +47,7 @@ def remove_dir(path):
 # 대상 디렉터리에서 가장 하위 디렉터리 경로를 꺼낸다.
 def find_dir(path):
     for root, dirnames, filenames in os.walk(path, topdown=False):
+        print(root, "탐색")
         remove_dir(root)
 
 
